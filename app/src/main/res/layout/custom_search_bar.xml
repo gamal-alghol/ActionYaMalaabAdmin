@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_1"
+    android:background="?attr/colorPrimary"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/search_ln_sort"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_5"
+        appUpdate:layout_constraintBottom_toBottomOf="parent"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="@dimen/icon_size_small"
+            android:layout_height="@dimen/icon_size_small"
+            android:background="@null"
+            android:clickable="false"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_2"
+            android:scaleType="fitCenter"
+            android:tint="@color/white"
+            appUpdate:srcCompat="@drawable/icon_arrow_down" />
+
+        <TextView
+            android:id="@+id/txt_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingEnd="@dimen/padding_10"
+            android:paddingStart="@dimen/padding_10"
+            android:paddingTop="@dimen/padding_5"
+            android:text="فرز"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_subheading" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/Separator_Vertical_No_Margin"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/gray_transparent"
+        appUpdate:layout_constraintBottom_toBottomOf="parent"
+        appUpdate:layout_constraintStart_toEndOf="@id/search_ln_sort"
+        appUpdate:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/search_txt_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:gravity="center"
+        android:text="بحث"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_subheading"
+        appUpdate:layout_constraintBottom_toBottomOf="parent"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toEndOf="@id/search_ln_sort"
+        appUpdate:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/search_edt_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_10"
+        android:hint="@string/hint_search"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textColorHint="@color/translucent_white"
+        android:theme="@style/EditText_SEARCH"
+        android:visibility="gone" />
+
+</LinearLayout>

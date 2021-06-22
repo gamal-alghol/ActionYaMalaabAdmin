@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/mAppBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        appUpdate:layout_behavior="com.malaab.ya.action.actionyamalaab.custom.FlingBehavior"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toTopOf="parent">
+
+        <com.malaab.ya.action.actionyamalaab.admin.custom.CustomToolbar
+            android:id="@+id/mCustomToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            appUpdate:layout_scrollFlags="scroll|enterAlways" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        appUpdate:layout_constraintGuide_percent="0.5" />
+
+
+    <LinearLayout
+        android:id="@+id/ln_users"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_10"
+        appUpdate:layout_constraintBottom_toTopOf="@+id/ln_addPlayground"
+        appUpdate:layout_constraintEnd_toStartOf="@id/guideline"
+        appUpdate:layout_constraintHorizontal_bias="0.5"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toBottomOf="@+id/mAppBar">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:clickable="false"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            appUpdate:srcCompat="@drawable/icon_people" />
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:gravity="center"
+            android:text="اللاعبين"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_title" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Separator_Vertical_No_Margin"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/separator"
+        appUpdate:layout_constraintBottom_toBottomOf="@+id/ln_users"
+        appUpdate:layout_constraintEnd_toEndOf="@id/guideline"
+        appUpdate:layout_constraintStart_toStartOf="@id/guideline"
+        appUpdate:layout_constraintTop_toTopOf="@+id/ln_users" />
+
+    <LinearLayout
+        android:id="@+id/ln_owners"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        appUpdate:layout_constraintBottom_toBottomOf="@+id/ln_users"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toEndOf="@id/guideline"
+        appUpdate:layout_constraintTop_toTopOf="@+id/ln_users">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:clickable="false"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            appUpdate:srcCompat="@drawable/icon_owner" />
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:gravity="center"
+            android:text="أصحاب الملاعب"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_title" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txt_sep1"
+        style="@style/Separator_Horizontal_No_Margin"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/separator"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toBottomOf="@+id/ln_users" />
+
+    <LinearLayout
+        android:id="@+id/ln_addPlayground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_10"
+        appUpdate:layout_constraintBottom_toTopOf="@+id/ln_attendance"
+        appUpdate:layout_constraintEnd_toStartOf="@id/guideline"
+        appUpdate:layout_constraintHorizontal_bias="0.5"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toBottomOf="@+id/ln_users">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:clickable="false"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            appUpdate:srcCompat="@drawable/icon_football_field_new" />
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:gravity="center"
+            android:text="إضافة تمرين"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_title" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Separator_Vertical_No_Margin"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/separator"
+        appUpdate:layout_constraintBottom_toBottomOf="@+id/ln_addPlayground"
+        appUpdate:layout_constraintEnd_toEndOf="@id/guideline"
+        appUpdate:layout_constraintStart_toStartOf="@id/guideline"
+        appUpdate:layout_constraintTop_toTopOf="@+id/ln_addPlayground" />
+
+    <LinearLayout
+        android:id="@+id/ln_manage_bookings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        appUpdate:layout_constraintBottom_toBottomOf="@+id/ln_addPlayground"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toEndOf="@id/guideline"
+        appUpdate:layout_constraintTop_toTopOf="@+id/ln_addPlayground">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:clickable="false"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            appUpdate:srcCompat="@drawable/icon_calendar" />
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:gravity="center"
+            android:text="إدارة الحجوزات"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_title" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txt_sep2"
+        style="@style/Separator_Horizontal_No_Margin"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/separator"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toBottomOf="@+id/ln_addPlayground" />
+
+    <LinearLayout
+        android:id="@+id/ln_attendance"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_10"
+        appUpdate:layout_constraintBottom_toBottomOf="parent"
+        appUpdate:layout_constraintEnd_toStartOf="@id/guideline"
+        appUpdate:layout_constraintHorizontal_bias="0.5"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toBottomOf="@+id/ln_addPlayground">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:clickable="false"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            appUpdate:srcCompat="@drawable/icon_attendance" />
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:gravity="center"
+            android:text="الحضور و الدفع"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_title" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Separator_Vertical_No_Margin"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/separator"
+        appUpdate:layout_constraintBottom_toBottomOf="@+id/ln_attendance"
+        appUpdate:layout_constraintEnd_toEndOf="@id/guideline"
+        appUpdate:layout_constraintStart_toStartOf="@id/guideline"
+        appUpdate:layout_constraintTop_toTopOf="@+id/ln_attendance" />
+
+    <LinearLayout
+        android:id="@+id/ln_wallet"
+        android:layout_width="0dp"
+        android:visibility="visible"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        appUpdate:layout_constraintBottom_toBottomOf="@+id/ln_attendance"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toEndOf="@id/guideline"
+        appUpdate:layout_constraintTop_toTopOf="@+id/ln_attendance">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btn_manage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:clickable="false"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            appUpdate:srcCompat="@drawable/icon_wallet" />
+
+        <TextView
+            android:id="@+id/lbl_manage"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:gravity="center"
+            android:text="محفظة الإدارة"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_title" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

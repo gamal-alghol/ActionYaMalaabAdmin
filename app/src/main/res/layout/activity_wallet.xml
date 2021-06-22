@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:context=".ui.wallet.WalletActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@drawable/btn_rounded_green_transparent">
+
+            <Button
+                android:id="@+id/btn_full"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackgroundBorderless"
+                android:text="@string/full"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/txt_headline" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/margin_25"
+            android:background="@drawable/btn_rounded_green_transparent">
+
+            <Button
+                android:id="@+id/btn_individual"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackgroundBorderless"
+                android:text="@string/individual"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/txt_headline" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

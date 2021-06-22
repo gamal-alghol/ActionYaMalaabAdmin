@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/colorPrimary"
+    android:padding="0dp"
+    appUpdate:contentInsetEnd="10dp"
+    appUpdate:contentInsetLeft="0dp"
+    appUpdate:contentInsetRight="10dp"
+    appUpdate:contentInsetStart="0dp"
+    appUpdate:layout_collapseMode="pin"
+    appUpdate:layout_scrollFlags="scroll|enterAlways"
+    appUpdate:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fr_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:padding="@dimen/padding_2"
+            appUpdate:layout_constraintBottom_toBottomOf="parent"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/btn_mail"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                appUpdate:srcCompat="@drawable/icon_mail" />
+
+            <com.malaab.ya.action.actionyamalaab.admin.custom.CircularTextView
+                android:id="@+id/txt_messagesCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/padding_2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_caption"
+                android:visibility="gone"
+                appUpdate:cSolidColor="@color/red"
+                appUpdate:cStrokeColor="@color/white"
+                appUpdate:cStrokeWidth="1" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fr_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:padding="@dimen/padding_2"
+            appUpdate:layout_constraintBottom_toBottomOf="parent"
+            appUpdate:layout_constraintEnd_toStartOf="@id/fr_mail"
+            appUpdate:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/btn_chat"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/content_description"
+                android:scaleType="fitCenter"
+                appUpdate:srcCompat="@drawable/icon_notification_empty" />
+
+            <com.malaab.ya.action.actionyamalaab.admin.custom.CircularTextView
+                android:id="@+id/txt_notificationCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/padding_2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_caption"
+                android:visibility="gone"
+                appUpdate:cSolidColor="@color/red"
+                appUpdate:cStrokeColor="@color/white"
+                appUpdate:cStrokeWidth="1" />
+        </FrameLayout>
+
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btn_staff"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            appUpdate:layout_constraintBottom_toBottomOf="parent"
+            appUpdate:layout_constraintEnd_toStartOf="@id/fr_chat"
+            appUpdate:layout_constraintTop_toTopOf="parent"
+            appUpdate:srcCompat="@drawable/icon_team" />
+
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_title"
+            appUpdate:layout_constraintBottom_toBottomOf="parent"
+            appUpdate:layout_constraintLeft_toLeftOf="parent"
+            appUpdate:layout_constraintRight_toRightOf="parent"
+            appUpdate:layout_constraintTop_toTopOf="parent" />
+
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btn_logout"
+            android:layout_width="@dimen/icon_size_medium"
+            android:layout_height="@dimen/icon_size_medium"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_2"
+            android:scaleType="fitCenter"
+            appUpdate:layout_constraintBottom_toBottomOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toTopOf="parent"
+            appUpdate:srcCompat="@drawable/icon_logout" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.Toolbar>

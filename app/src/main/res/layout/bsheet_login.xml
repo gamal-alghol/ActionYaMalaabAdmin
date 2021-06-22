@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bSheet_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#39174d03"
+    android:orientation="vertical"
+    appUpdate:layout_behavior="com.malaab.ya.action.actionyamalaab.admin.custom.LockableBottomSheetBehavior">
+
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="@dimen/icon_size_medium"
+        android:layout_height="@dimen/icon_size_medium"
+        android:layout_margin="@dimen/margin_5"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/content_description"
+        android:padding="@dimen/padding_5"
+        android:scaleType="fitCenter"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toTopOf="parent"
+        appUpdate:srcCompat="@drawable/icon_close" />
+
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/bsheet_icon_email"
+        android:layout_width="@dimen/icon_size_medium"
+        android:layout_height="@dimen/icon_size_medium"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/content_description"
+        android:padding="@dimen/padding_5"
+        android:scaleType="fitCenter"
+        appUpdate:layout_constraintBottom_toBottomOf="@+id/lbl_email"
+        appUpdate:layout_constraintStart_toStartOf="@id/bsheet_btn_login"
+        appUpdate:layout_constraintTop_toTopOf="@+id/lbl_email"
+        appUpdate:srcCompat="@drawable/icon_user" />
+
+    <TextView
+        android:id="@+id/lbl_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_5"
+        android:text="@string/email"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_caption"
+        appUpdate:layout_constraintBottom_toTopOf="@+id/bsheet_edt_email"
+        appUpdate:layout_constraintStart_toEndOf="@id/bsheet_icon_email" />
+
+    <EditText
+        android:id="@+id/bsheet_edt_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:hint="@string/email"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/padding_15"
+        android:paddingEnd="@dimen/padding_5"
+        android:paddingStart="@dimen/padding_5"
+        android:paddingTop="@dimen/padding_5"
+        android:textColor="@color/white"
+        android:theme="@style/EditText_NoBottomLine"
+        appUpdate:layout_constraintBottom_toTopOf="@+id/bsheet_icon_password"
+        appUpdate:layout_constraintEnd_toEndOf="@id/bsheet_btn_login"
+        appUpdate:layout_constraintStart_toEndOf="@id/bsheet_icon_password" />
+
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/bsheet_icon_password"
+        android:layout_width="@dimen/icon_size_medium"
+        android:layout_height="@dimen/icon_size_medium"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/content_description"
+        android:padding="@dimen/padding_5"
+        android:scaleType="fitCenter"
+        appUpdate:layout_constraintBottom_toBottomOf="@+id/lbl_password"
+        appUpdate:layout_constraintStart_toStartOf="@id/bsheet_btn_login"
+        appUpdate:layout_constraintTop_toTopOf="@+id/lbl_password"
+        appUpdate:srcCompat="@drawable/icon_password" />
+
+    <TextView
+        android:id="@+id/lbl_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_5"
+        android:text="@string/password"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_caption"
+        appUpdate:layout_constraintBottom_toTopOf="@+id/bsheet_edt_password"
+        appUpdate:layout_constraintStart_toEndOf="@id/bsheet_icon_password" />
+
+    <EditText
+        android:id="@+id/bsheet_edt_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_25"
+        android:gravity="start"
+        android:hint="@string/password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/padding_15"
+        android:paddingEnd="@dimen/padding_5"
+        android:paddingStart="@dimen/padding_5"
+        android:paddingTop="@dimen/padding_5"
+        android:textColor="@color/white"
+        android:theme="@style/EditText_NoBottomLine"
+        appUpdate:layout_constraintBottom_toTopOf="@+id/bsheet_btn_login"
+        appUpdate:layout_constraintEnd_toEndOf="@id/bsheet_btn_login"
+        appUpdate:layout_constraintStart_toEndOf="@id/bsheet_icon_password" />
+
+    <Button
+        android:id="@+id/bsheet_btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_35"
+        android:layout_marginStart="@dimen/margin_35"
+        android:background="@drawable/btn_rounded_white"
+        android:text="@string/login"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/txt_button"
+        android:textStyle="bold"
+        appUpdate:layout_constraintBottom_toTopOf="@+id/guideline"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bsheet_btn_forgot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_35"
+        android:layout_marginStart="@dimen/margin_35"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/btn_rounded_white"
+        android:text="@string/forgot_password"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/txt_button"
+        android:textStyle="bold"
+        android:visibility="gone"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toBottomOf="@+id/bsheet_btn_login" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        appUpdate:layout_constraintGuide_percent="0.75" />
+
+</android.support.constraint.ConstraintLayout>

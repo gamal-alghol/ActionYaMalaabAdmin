@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_5"
+    appUpdate:cardCornerRadius="@dimen/cv_radius"
+    appUpdate:cardElevation="@dimen/cv_elevation"
+    appUpdate:cardUseCompatPadding="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:padding="@dimen/padding_10">
+
+        <TextView
+            android:id="@+id/lbl_name"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:text="الاسم"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="@+id/guideline"
+            appUpdate:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="@+id/lbl_name"
+            appUpdate:layout_constraintStart_toStartOf="@+id/lbl_name"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/lbl_name" />
+
+
+        <TextView
+            android:id="@+id/lbl_email"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:text="البريد الالكتروني"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="@+id/guideline"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_name" />
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="@+id/lbl_email"
+            appUpdate:layout_constraintStart_toStartOf="@+id/lbl_email"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/lbl_email" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            appUpdate:layout_constraintGuide_percent="0.5" />
+
+
+        <TextView
+            android:id="@+id/lbl_phone"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:text="رقم الجوال"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="@id/guideline" />
+
+        <TextView
+            android:id="@+id/txt_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="@+id/lbl_phone"
+            appUpdate:layout_constraintStart_toStartOf="@+id/lbl_phone"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/lbl_phone" />
+
+
+        <TextView
+            android:id="@+id/lbl_password"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:text="الرقم السري"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toEndOf="@+id/guideline"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_phone" />
+
+        <TextView
+            android:id="@+id/txt_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="@+id/lbl_password"
+            appUpdate:layout_constraintStart_toStartOf="@+id/lbl_password"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/lbl_password" />
+
+
+        <TextView
+            android:id="@+id/lbl_lastSeen"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:text="اخر ظهور"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_email" />
+
+        <TextView
+            android:id="@+id/txt_lastSeen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintEnd_toEndOf="@+id/lbl_lastSeen"
+            appUpdate:layout_constraintStart_toStartOf="@+id/lbl_lastSeen"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/lbl_lastSeen" />
+
+
+        <Switch
+            android:id="@+id/sw_block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_25"
+            android:switchPadding="@dimen/padding_15"
+            android:text="تعطيل حساب الموظف"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_lastSeen" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

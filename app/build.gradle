@@ -1,0 +1,207 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    /* This helps to make building time faster */
+    testOptions.unitTests.all {
+        reports.html.enabled = false
+        reports.junitXml.enabled = false
+    }
+
+    defaultConfig {
+        applicationId "com.malaab.ya.action.actionyamalaab.admin"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion 29
+        versionCode 8
+        versionName "1.1.8"
+        testInstrumentationRunner "android.support.layout_summary.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
+//        /* For using Blurkit library*/
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    buildTypes {
+        debug {
+//            minifyEnabled false //Disabled Proguard
+            resValue("string", "PORT_NUMBER", "8081")
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //avoid duplicate files during packaging of APK
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'LICENSE.txt'
+        pickFirst 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        additionalParameters "--no-version-vectors"
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+//greendao {
+//    schemaVersion 1
+//}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintVersion"
+    implementation "com.android.support:exifinterface:$rootProject.supportLibraryVersion"
+
+    //region Need to add those 3 if enable Multidex, otherwise you will get an error in Gradle syncing
+    implementation 'com.android.support:multidex:1.0.3'
+    androidTestImplementation 'com.android.support:multidex:1.0.3'
+    androidTestImplementation 'com.android.support:multidex-instrumentation:1.0.3'
+    //endregion
+
+    // Google Support Design
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:animated-vector-drawable:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v13:$rootProject.supportLibraryVersion"
+
+    // Google Play Services
+    implementation "com.google.android.gms:play-services-gcm:$rootProject.gPlayServicesVersion"
+    implementation "com.google.android.gms:play-services-location:$rootProject.gPlayServicesVersion"
+    implementation "com.google.android.gms:play-services-analytics:$rootProject.gPlayServicesVersion"
+    implementation "com.google.android.gms:play-services-maps:$rootProject.gPlayServicesVersion"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$rootProject.gPlayServicesVersion"
+    implementation "com.google.firebase:firebase-crash:$rootProject.gPlayServicesVersion"
+    implementation "com.google.firebase:firebase-auth:$rootProject.gPlayServicesVersion"
+    implementation "com.google.firebase:firebase-database:$rootProject.gPlayServicesVersion"
+    implementation "com.google.firebase:firebase-messaging:$rootProject.gPlayServicesVersion"
+    implementation "com.google.firebase:firebase-config:$rootProject.gPlayServicesVersion"
+    implementation "com.google.firebase:firebase-storage:$rootProject.gPlayServicesVersion"
+
+    // database
+//    implementation "org.greenrobot:greendao:$rootProject.greenDaoVersion"
+    //    implementation "net.zetetic:android-database-sqlcipher:$rootProject.sqlcipher"
+    /* just to avoid some exceptions for now*/
+
+    //todo Remove this
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+//    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    // dependency injection
+    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+//    provided 'javax.annotation:jsr250-api:1.0'
+//    compile 'javax.inject:javax.inject:1'
+
+    // code generator for view
+    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+
+
+    // font
+    implementation "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
+
+    // AndPermission
+    implementation 'com.yanzhenjie:permission:1.1.2'
+
+    // Smart Location
+    implementation 'io.nlopez.smartlocation:rx:3.3.3'
+
+    // Activity Manager
+    implementation "com.yayandroid:TheActivityManager:$rootProject.theActivityManagerVersion"
+
+    // reactive
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+
+    // retrofit
+//    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+//    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    // gson parser
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    // logger
+    implementation "com.orhanobut:logger:$rootProject.loggerVersion"
+    // debug database
+    debugImplementation "com.amitshekhar.android:debug-db:$rootProject.debugDBVersion"
+    // LoggingInterceptor
+//    implementation('com.github.ihsanbal:LoggingInterceptor:2.0.5') {
+//        exclude group: 'org.json', module: 'json'
+//    }
+
+    // eventbus
+    implementation "org.greenrobot:eventbus:$rootProject.eventBusVersion"
+
+
+    // image
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    implementation "de.hdodenhof:circleimageview:$rootProject.circleImageviewVersion"
+    implementation 'com.github.jkwiecien:EasyImage:2.0.3'
+    implementation 'com.jackandphantom.android:blurimage:1.2.0'
+
+    // View Animation
+    implementation "com.daimajia.easing:library:$rootProject.easingVersion"
+    implementation "com.daimajia.androidanimations:library:$rootProject.androidanimationsVersion"
+
+    // social-signin-helper
+//    compile "com.google.android.gms:play-services-plus:$rootProject.gPlayServicesVersion"
+    implementation "com.google.android.gms:play-services-auth:$rootProject.gPlayServicesVersion"
+//    implementation 'com.facebook.android:facebook-login:4.28.0'
+
+    // Page Indicator View
+    implementation 'com.romandanylyk:pageindicatorview:1.0.0@aar'
+
+    // Circular Progressbar View
+    implementation 'com.mikhaellopez:circularprogressbar:1.1.1'
+
+//    implementation 'com.github.florent37:shapeofview:1.0.6'
+
+    // Material Range Bar
+//    implementation 'com.appyvet:materialrangebar:1.4'
+
+    // Material Datetime Picker
+    implementation ('com.wdullaer:materialdatetimepicker:3.6.4') {
+        exclude group: 'com.android.support'
+    }
+
+    implementation 'com.github.esafirm:rxdownloader:2.0.0'
+
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+//    androidTestImplementation 'com.android.support.layout_summary:runner:1.0.1'
+//    androidTestImplementation 'com.android.support.layout_summary.espresso:espresso-core:3.0.1'
+}
+apply plugin: 'com.google.gms.google-services'
+
+configurations.all {
+    resolutionStrategy.force "com.android.support:support-annotations:$supportLibraryVersion"
+}

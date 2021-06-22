@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_5"
+    android:layout_marginTop="@dimen/margin_5"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_rounded_border_green">
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            appUpdate:layout_constraintGuide_percent="0.60" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:padding="@dimen/padding_10"
+            android:text="الاسم:"
+            appUpdate:layout_constraintEnd_toStartOf="@id/guideline"
+            appUpdate:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_captainName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:gravity="right"
+            android:padding="@dimen/padding_10"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toEndOf="@id/guideline"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_sep"
+            appUpdate:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txt_sep"
+            style="@style/Separator_Horizontal_No_Margin"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_captainName" />
+
+
+        <TextView
+            android:id="@+id/lbl_players"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:padding="@dimen/padding_10"
+            android:text="عدد الاشخاص:"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@id/txt_sep" />
+
+        <TextView
+            android:id="@+id/txt_players"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:padding="@dimen/padding_10"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toEndOf="@id/lbl_players"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_sep" />
+
+
+        <TextView
+            android:id="@+id/txt_sep1"
+            style="@style/Separator_Horizontal_No_Margin"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_players" />
+
+
+        <TextView
+            android:id="@+id/lbl_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_15"
+            android:layout_marginTop="@dimen/margin_10"
+            android:padding="@dimen/padding_2"
+            android:text="المستحق:"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@id/txt_sep1" />
+
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_15"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintStart_toEndOf="@id/lbl_price"
+            appUpdate:layout_constraintTop_toTopOf="@id/lbl_price" />
+
+
+        <TextView
+            android:id="@+id/lbl_outstanding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_15"
+            android:padding="@dimen/padding_2"
+            android:text="السوابق:"
+            appUpdate:layout_constraintEnd_toStartOf="@id/txt_outstanding"
+            appUpdate:layout_constraintTop_toTopOf="@id/lbl_price" />
+
+        <TextView
+            android:id="@+id/txt_outstanding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_15"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintTop_toTopOf="@id/lbl_price" />
+
+
+        <TextView
+            android:id="@+id/lbl_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_15"
+            android:gravity="end"
+            android:padding="@dimen/padding_2"
+            android:text="المجموع:"
+            appUpdate:layout_constraintEnd_toStartOf="@id/txt_total"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@id/lbl_price" />
+
+        <TextView
+            android:id="@+id/txt_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_15"
+            android:gravity="start"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toEndOf="@id/lbl_total"
+            appUpdate:layout_constraintTop_toTopOf="@id/lbl_total" />
+
+
+        <Button
+            android:id="@+id/btn_attendance"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@color/colorPrimary"
+            android:minHeight="0dp"
+            android:padding="@dimen/padding_5"
+            android:text="تم الحضور و الدفع"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            appUpdate:layout_constraintBottom_toBottomOf="parent"
+            appUpdate:layout_constraintEnd_toStartOf="@+id/btn_absent"
+            appUpdate:layout_constraintHorizontal_bias="0.5"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/lbl_total" />
+
+        <Button
+            android:id="@+id/btn_absent"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@color/google"
+            android:minHeight="0dp"
+            android:padding="@dimen/padding_5"
+            android:text="لم يتم الحضور و الدفع"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            appUpdate:layout_constraintBottom_toBottomOf="parent"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintHorizontal_bias="0.5"
+            appUpdate:layout_constraintStart_toEndOf="@+id/btn_attendance"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/lbl_total" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

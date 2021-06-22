@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_5">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_35"
+        android:background="@drawable/layout_rounded_border_green">
+
+        <TextView
+            android:id="@+id/txt_day"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="20"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_title"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="February - Wednesday"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_caption"
+            appUpdate:layout_constraintEnd_toStartOf="@id/txt_status"
+            appUpdate:layout_constraintStart_toStartOf="@id/txt_day"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_day" />
+
+        <TextView
+            android:id="@+id/txt_status"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Pending"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintBottom_toBottomOf="@id/txt_date"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toTopOf="@id/txt_date" />
+
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:gravity="left"
+            android:text="400 SAR"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading"
+            appUpdate:layout_constraintBottom_toBottomOf="@id/txt_date"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toEndOf="@id/txt_status"
+            appUpdate:layout_constraintTop_toTopOf="@id/txt_date" />
+
+
+        <TextView
+            android:id="@+id/txt_sep"
+            style="@style/Separator_Horizontal_No_Margin"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="parent"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_date" />
+
+
+        <TextView
+            android:id="@+id/txt_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="Booking Type: Full Booking"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="@id/txt_date"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_sep" />
+
+
+        <TextView
+            android:id="@+id/txt_name_playground"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="name: Full Booking"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="@id/txt_date"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_type" />
+
+        <TextView
+            android:id="@+id/txt_attended"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_5"
+            android:text="attended"
+            android:visibility="gone"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="@id/txt_date"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_name_playground"
+            />
+        <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_5"
+            android:text="Address"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="@id/txt_date"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_attended"
+            />
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_5"
+            android:text="Time"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_default"
+            appUpdate:layout_constraintBottom_toBottomOf="parent"
+            appUpdate:layout_constraintEnd_toEndOf="parent"
+            appUpdate:layout_constraintStart_toStartOf="@id/txt_date"
+            appUpdate:layout_constraintTop_toBottomOf="@+id/txt_address" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/img_status"
+        android:layout_width="@dimen/img_size"
+        android:layout_height="@dimen/img_size"
+        android:layout_gravity="center_horizontal"
+        appUpdate:srcCompat="@drawable/icon_status_approved" />
+
+</FrameLayout>

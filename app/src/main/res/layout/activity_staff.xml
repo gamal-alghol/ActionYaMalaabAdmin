@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:context=".ui.messages.MessagesActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
+        appUpdate:layout_constraintEnd_toEndOf="parent"
+        appUpdate:layout_constraintStart_toStartOf="parent"
+        appUpdate:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="@dimen/btn_width_medium"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:background="@drawable/btn_rounded_green_transparent"
+            android:padding="@dimen/padding_25"
+            android:text="إضافة موظف"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_headline" />
+
+        <Button
+            android:id="@+id/btn_list"
+            android:layout_width="@dimen/btn_width_medium"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:background="@drawable/btn_rounded_green_transparent"
+            android:padding="@dimen/padding_25"
+            android:text="قائمة الموظفين"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_headline" />
+
+    </LinearLayout>
+
+</LinearLayout>

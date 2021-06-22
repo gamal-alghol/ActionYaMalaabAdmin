@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appUpdate="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bSheet_book"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    appUpdate:layout_behavior="com.malaab.ya.action.actionyamalaab.admin.custom.LockableBottomSheetBehavior">
+
+    <ProgressBar
+        android:id="@+id/pBar_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_5"
+        android:visibility="gone" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsc_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_continue"
+        android:background="@color/white"
+        android:visibility="visible">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_name"
+                style="@style/Bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:gravity="center"
+                android:lines="1"
+                tools:text="NAME"
+                android:textColor="@color/black_effective"
+                android:textSize="@dimen/txt_headline"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                style="@style/SemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lines="1"
+                android:textColor="@color/black_effective"
+                android:textSize="@dimen/txt_subheading"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/txt_name" />
+
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/btn_share"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:visibility="gone"
+
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                appUpdate:layout_constraintBottom_toBottomOf="@id/btn_location"
+                appUpdate:layout_constraintEnd_toStartOf="@id/btn_location"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toTopOf="@id/btn_location"
+                appUpdate:srcCompat="@drawable/icon_share" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/btn_location"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:visibility="gone"
+
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                appUpdate:layout_constraintEnd_toStartOf="@id/btn_favourite"
+                appUpdate:layout_constraintStart_toEndOf="@id/btn_share"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/txt_price"
+                appUpdate:srcCompat="@drawable/icon_location_details" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/btn_favourite"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:background="@drawable/chk_favourite_selector"
+                android:button="@null"
+                android:checked="false"
+                android:clickable="true"
+                android:contentDescription="@string/content_description"
+                android:focusable="true"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                android:visibility="gone"
+                appUpdate:layout_constraintBottom_toBottomOf="@id/btn_location"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toEndOf="@id/btn_location"
+                appUpdate:layout_constraintTop_toTopOf="@id/btn_location"
+                appUpdate:srcCompat="@drawable/icon_star_empty" />
+            <TextView
+                android:id="@+id/txt_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                tools:text="TextView"
+                android:textColor="@color/black_effective"
+                android:textSize="@dimen/txt_default"
+                appUpdate:layout_constraintEnd_toEndOf="@+id/txt_price"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/txt_price" />
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_images"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/img_size_xxxlarge"
+                android:layout_marginTop="@dimen/margin_10"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/txt_location" />
+
+            <com.rd.PageIndicatorView
+                android:id="@+id/mPageIndicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/margin_5"
+                appUpdate:layout_constraintBottom_toBottomOf="@+id/vp_images"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:piv_animationType="swap"
+                appUpdate:piv_dynamicCount="false"
+                appUpdate:piv_interactiveAnimation="true"
+                appUpdate:piv_padding="5dp"
+                appUpdate:piv_radius="5dp"
+                appUpdate:piv_selectedColor="@color/white"
+                appUpdate:piv_unselectedColor="@color/semi_gray"
+                appUpdate:piv_viewPager="@id/vp_images" />
+
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesShower"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                appUpdate:layout_constraintEnd_toStartOf="@+id/btn_amenitiesWC"
+                appUpdate:layout_constraintHorizontal_bias="0.5"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/vp_images"
+                appUpdate:srcCompat="@drawable/icon_shower" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesShower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="أماكن استحمام"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                appUpdate:layout_constraintEnd_toEndOf="@id/btn_amenitiesShower"
+                appUpdate:layout_constraintStart_toStartOf="@id/btn_amenitiesShower"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesWC"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                appUpdate:layout_constraintBottom_toBottomOf="@+id/btn_amenitiesShower"
+                appUpdate:layout_constraintEnd_toStartOf="@+id/btn_amenitiesGrass"
+                appUpdate:layout_constraintHorizontal_bias="0.5"
+                appUpdate:layout_constraintStart_toEndOf="@+id/btn_amenitiesShower"
+                appUpdate:layout_constraintTop_toTopOf="@+id/btn_amenitiesShower"
+                appUpdate:srcCompat="@drawable/icon_wc" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesWC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="دورات مياه"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                appUpdate:layout_constraintEnd_toEndOf="@id/btn_amenitiesWC"
+                appUpdate:layout_constraintStart_toStartOf="@id/btn_amenitiesWC"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesGrass"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                appUpdate:layout_constraintBottom_toBottomOf="@+id/btn_amenitiesShower"
+                appUpdate:layout_constraintEnd_toStartOf="@+id/btn_amenitiesWater"
+                appUpdate:layout_constraintHorizontal_bias="0.5"
+                appUpdate:layout_constraintStart_toEndOf="@+id/btn_amenitiesWC"
+                appUpdate:layout_constraintTop_toTopOf="@+id/btn_amenitiesShower"
+                appUpdate:srcCompat="@drawable/icon_grass" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesGrass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="أرضية عشبية"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                appUpdate:layout_constraintEnd_toEndOf="@id/btn_amenitiesGrass"
+                appUpdate:layout_constraintStart_toStartOf="@id/btn_amenitiesGrass"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesWater"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                appUpdate:layout_constraintBottom_toBottomOf="@+id/btn_amenitiesShower"
+                appUpdate:layout_constraintEnd_toStartOf="@+id/btn_amenitiesBall"
+                appUpdate:layout_constraintHorizontal_bias="0.5"
+                appUpdate:layout_constraintStart_toEndOf="@+id/btn_amenitiesGrass"
+                appUpdate:layout_constraintTop_toTopOf="@+id/btn_amenitiesShower"
+                appUpdate:srcCompat="@drawable/icon_water_bottle" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesWater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="ماء شرب"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                appUpdate:layout_constraintEnd_toEndOf="@id/btn_amenitiesWater"
+                appUpdate:layout_constraintStart_toStartOf="@id/btn_amenitiesWater"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesBall"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                appUpdate:layout_constraintBottom_toBottomOf="@+id/btn_amenitiesShower"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintHorizontal_bias="0.5"
+                appUpdate:layout_constraintStart_toEndOf="@+id/btn_amenitiesWater"
+                appUpdate:layout_constraintTop_toTopOf="@+id/btn_amenitiesShower"
+                appUpdate:srcCompat="@drawable/icon_ball" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesBall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="كرة"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                appUpdate:layout_constraintEnd_toEndOf="@id/btn_amenitiesBall"
+                appUpdate:layout_constraintStart_toStartOf="@id/btn_amenitiesBall"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+
+            <TextView
+                android:id="@+id/txt_sep1"
+                style="@style/Separator_Horizontal"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_15"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/txt_amenitiesBall" />
+
+
+            <LinearLayout
+                android:id="@+id/ln_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_10"
+                appUpdate:layout_constraintEnd_toStartOf="@+id/ln_peopleNumber"
+                appUpdate:layout_constraintHorizontal_bias="0.5"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/txt_sep1">
+
+                <TextView
+                    style="@style/SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="المدة"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_title" />
+
+                <TextView
+                    android:id="@+id/txt_duration"
+                    style="@style/SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="90 min"
+                    android:textSize="@dimen/txt_subheading" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_peopleNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_10"
+                android:visibility="gone"
+                appUpdate:layout_constraintBottom_toBottomOf="@+id/ln_duration"
+                appUpdate:layout_constraintEnd_toStartOf="@id/ln_size"
+                appUpdate:layout_constraintStart_toEndOf="@+id/ln_duration"
+                appUpdate:layout_constraintTop_toTopOf="@+id/ln_duration">
+
+                <TextView
+                    style="@style/SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="How Many"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_title" />
+
+                <TextView
+                    android:id="@+id/txt_peopleNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="90 min"
+                    android:textSize="@dimen/txt_title" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_10"
+                appUpdate:layout_constraintBottom_toBottomOf="@+id/ln_duration"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintHorizontal_bias="0.5"
+                appUpdate:layout_constraintStart_toEndOf="@+id/ln_peopleNumber"
+                appUpdate:layout_constraintTop_toTopOf="@+id/ln_duration">
+
+                <TextView
+                    style="@style/SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="حجم الملعب"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_title" />
+
+                <TextView
+                    android:id="@+id/txt_size"
+                    style="@style/SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="5 * 5"
+                    android:textSize="@dimen/txt_subheading" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_age"
+                style="@style/SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:gravity="center"
+                android:text="حدد الفئة العمرية"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/txt_title"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/ln_duration" />
+
+            <LinearLayout
+                android:id="@+id/ln_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingEnd="@dimen/padding_10"
+                android:paddingStart="@dimen/padding_10"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/lbl_age">
+
+                <CheckBox
+                    android:id="@+id/chk_young"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="من 8 الى 12"
+                    android:textSize="@dimen/txt_caption" />
+
+                <CheckBox
+                    android:id="@+id/chk_middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:checked="true"
+                    android:text="من 13 الى 17"
+                    android:textSize="@dimen/txt_caption" />
+
+                <CheckBox
+                    android:id="@+id/chk_old"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:checked="true"
+                    android:text="+18"
+                    android:textSize="@dimen/txt_caption" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_price"
+                style="@style/Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/title_price"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/txt_title"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@id/ln_age" />
+
+            <EditText
+                android:id="@+id/edt_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:layout_marginStart="@dimen/margin_15"
+                android:background="@drawable/layout_border_full_grey"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:padding="@dimen/padding_10"
+                android:textColor="@color/colorPrimary"
+                appUpdate:layout_constraintEnd_toEndOf="@id/ln_age"
+                appUpdate:layout_constraintStart_toStartOf="@id/ln_age"
+                appUpdate:layout_constraintTop_toBottomOf="@id/lbl_price" />
+
+
+            <TextView
+                android:id="@+id/txt_sep2"
+                style="@style/Separator_Horizontal"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/margin_15"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/edt_price" />
+
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/btn_calendar"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@null"
+                android:clickable="false"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_5"
+                android:scaleType="fitCenter"
+                android:tint="@color/semi_gray"
+                appUpdate:layout_constraintEnd_toStartOf="@id/txt_datetime"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/txt_sep2"
+                appUpdate:srcCompat="@drawable/icon_calendar" />
+
+            <TextView
+                android:id="@+id/txt_datetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Select Date|Time"
+                android:textSize="@dimen/txt_default"
+                appUpdate:layout_constraintBottom_toBottomOf="@+id/btn_calendar"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toTopOf="@+id/btn_calendar" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_days"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_15"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/txt_datetime" />
+
+            <ProgressBar
+                android:id="@+id/pBar_times"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:visibility="gone"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/rv_days" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_times"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_15"
+                appUpdate:layout_constraintEnd_toEndOf="parent"
+                appUpdate:layout_constraintStart_toStartOf="parent"
+                appUpdate:layout_constraintTop_toBottomOf="@+id/rv_days" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <include
+        android:id="@+id/nsc_summary"
+        layout="@layout/layout_summary"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/ln_result"
+        layout="@layout/layout_result"
+        android:visibility="gone" />
+
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/padding_10"
+        android:text="متابعة"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_title"
+        android:visibility="gone" />
+
+</RelativeLayout>

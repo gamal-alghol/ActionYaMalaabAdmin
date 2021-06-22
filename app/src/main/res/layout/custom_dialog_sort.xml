@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_txt_title"
+        style="@style/Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/margin_15"
+        android:layout_marginStart="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_10"
+        android:text="فرز بواسطة"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/txt_title" />
+
+    <RadioButton
+        android:id="@+id/dialog_rd_recent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_15"
+        android:layout_marginStart="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_10"
+        android:text="الأحدث تسجيلا"
+        android:textSize="@dimen/txt_default" />
+
+    <RadioButton
+        android:id="@+id/dialog_rd_deactivated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_15"
+        android:layout_marginStart="@dimen/margin_15"
+        android:text="الموقوفين"
+        android:textSize="@dimen/txt_default" />
+
+    <RadioButton
+        android:id="@+id/dialog_rd_bookings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_15"
+        android:layout_marginStart="@dimen/margin_15"
+        android:text="الأكثر حجزا"
+        android:textSize="@dimen/txt_default" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/dialog_btn_search"
+            android:layout_width="@dimen/btn_width_small"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:background="@drawable/btn_rounded_green"
+            android:minHeight="0dp"
+            android:padding="@dimen/padding_10"
+            android:text="بحث"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_subheading" />
+
+        <Button
+            android:id="@+id/dialog_btn_close"
+            android:layout_width="@dimen/btn_width_small"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:background="@drawable/btn_rounded_green"
+            android:minHeight="0dp"
+            android:padding="@dimen/padding_10"
+            android:text="إلغاء"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_subheading" />
+
+    </LinearLayout>
+
+</LinearLayout>

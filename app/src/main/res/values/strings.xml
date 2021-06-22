@@ -1,0 +1,244 @@
+<resources>
+    <string name="app_name">إدارة التطبيق</string>
+
+    <!--play store-->
+    <string name="app_market_link">"market://details?id="</string>
+    <string name="app_google_play_store_link">"https://play.google.com/store/apps/details?id="</string>
+
+    <string name="google_maps_key">AIzaSyB-qiVqhwPV7RnMylFDRstycrTpo-sSCe4</string>
+
+    <string name="title_bookings_manage">إدارة الحجوزات</string>
+    <string name="title_search">بحث</string>
+    <string name="title_price">السعر</string>
+    <string name="title_region">المنطقة</string>
+    <string name="title_playground_size">حجم الملعب</string>
+    <string name="title_playground_add">اضافة ملعب فردي</string>
+    <string name="title_players">المستخدمين</string>
+    <string name="title_players_details">بيانات اللاعب</string>
+    <string name="title_owners">أصحاب الملاعب</string>
+    <string name="title_owners_details">بيانات صاحب الملعب</string>
+    <string name="title_reports">التقارير</string>
+    <string name="title_messages">الرسائل</string>
+    <string name="title_notifications">الإشعارات</string>
+    <string name="title_staff">الموظفين</string>
+    <string name="title_staff_add">إضافة موظف</string>
+    <string name="title_staff_list">قائمة الموظفين</string>
+    <string name="title_playgrounds">الملاعب</string>
+    <string name="title_attendance_payment">الحضور والدفع</string>
+    <string name="title_wallet">محفظة الإدارة</string>
+
+    <string name="version">رقم الاصدار</string>
+    <string name="title">العنوان</string>
+
+    <string name="mobile_email">رقم الجوال او البريد الالكتروني</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="password">الرمز السري</string>
+    <string name="verification_code">رمز التفعيل</string>
+
+    <string name="username">اسم المستخدم</string>
+    <string name="userid">رمز المستخدم الخاص</string>
+    <string name="old_password">كلمة السر القديمة</string>
+    <string name="new_password">كلمة السر الجديدة</string>
+    <string name="confirm_password">تأكيد كلمة السر</string>
+    <string name="name">الاسم</string>
+    <string name="fName">اسم مشرف الملعب الاول</string>
+    <string name="lName">اسم مشرف الملعب الاخير</string>
+    <string name="dob">تاريخ الميلاد</string>
+    <string name="contacts">Contacts</string>
+    <string name="phone_no">رقم الجوال</string>
+    <string name="age">العمر</string>
+    <string name="referral_code">Referral Code</string>
+    <string name="address">العنوان</string>
+    <string name="my_address">عنواني</string>
+    <string name="address_1">عنوان 1</string>
+    <string name="address_2">عنوان 2</string>
+    <string name="city">المدينة</string>
+    <string name="direction">الجهة</string>
+    <string name="postal_code">الرمز البريدي</string>
+    <string name="state">المحافظة</string>
+    <string name="status">الحالة</string>
+    <string name="country">البلد</string>
+    <string name="price">%.2f ر.س</string>
+    <string name="size">%d x %d</string>
+    <string name="message">الرسالة</string>
+    <string name="language">اللغة</string>
+    <string name="duration">المدة الزمنية</string>
+    <string name="day">أضف اليوم</string>
+    <string name="operation_hours">أوقات العمل</string>
+    <string name="current_week">الأسبوع الحالي</string>
+    <string name="total">المجموع</string>
+
+
+    <string name="playground_name">اسم الملعب</string>
+    <string name="add_playground_images">أضف صور الملعب</string>
+    <string name="add_playground_location">أضف موقع الملعب</string>
+    <string name="add_playground_amenities">أضف مميزات الملعب</string>
+
+    <string name="rewards">Rewards</string>
+    <string name="bookings">Bookings</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+
+    <string name="request_verification_code">طلب رمز التفعيل</string>
+    <string name="verify">تحقق من الرمز</string>
+    <string name="register">قدم طلبك</string>
+
+    <string name="content_description">loading…</string>
+
+    <string name="password_strength_weak">Weak</string>
+    <string name="password_strength_medium">Medium</string>
+    <string name="password_strength_strong">Strong</string>
+    <string name="password_strength_very_strong">Very Strong</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="login_to_account">Log in to your account here</string>
+
+    <string name="individual">حجز فردي</string>
+    <string name="full">حجز كامل</string>
+
+    <string name="upcoming_bookings">القادمة</string>
+    <string name="past_bookings">الماضية</string>
+
+
+
+
+    <string name="dialog_title_logout">هل أنت متأكد من تسجيل الخروج؟</string>
+    <string name="dialog_title_confirm">هل أنت متأكد من تأكيد الحجز؟</string>
+    <string name="dialog_title_reject">هل أنت متأكد من رفض الحجز؟</string>
+    <string name="dialog_title_cancel">هل أنت متأكد من إلغاء الحجز؟</string>
+    <string name="dialog_confirmation_message">عند تأكيد الحجز سيتم إرسال إشعار لصاحب الملعب بتأكيدك للحجز لإتمام عملية استلام الحجز والتسجيل والحضور من صاحب الملعب!</string>
+    <string name="dialog_update_title">تحديث جديد متوفر %s</string>
+    <string name="dialog_update_message">هل ترغب بالتحديث الان؟</string>
+
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="back">رجوع</string>
+
+
+    <!-- BUTTONS -->
+    <string name="welcome">Welcome</string>
+    <string name="login">دخول</string>
+    <string name="login_by_phone">--- دخول برقم الهاتف ---</string>
+    <string name="log_out">Logout</string>
+    <string name="login_here">Login Here</string>
+    <string name="forgot_password">نسيت الرقم السري؟</string>
+    <string name="skip">Skip</string>
+    <string name="arabic">Arabic</string>
+    <string name="update">نحديث</string>
+    <string name="save">حفظ</string>
+    <string name="continuee">متابعة</string>
+
+    <!-- MESSAGES -->
+    <string name="msg_user_not_login">Authentication failed,  kindly try to login again!</string>
+    <string name="msg_user_not_signed_in">يرجى إعادة تسجيل الدخول!</string>
+    <string name="msg_no_account">ماعندك حساب؟ سجل الان!</string>
+    <string name="msg_exit">اضغط مرة أخرى للخروج</string>
+    <string name="msg_success">تم حفظ التغيرات بنجاح</string>
+    <string name="msg_owner_create_success">شكرا لارسال طلبك، سيتم قريبا التواصل معك لتفعيل حسابك!</string>
+    <string name="msg_gps_enable">الرجاء تفعيل خدمة تحديد المواقع!</string>
+    <string name="msg_contactus_success">تم إرسال رسالتك بنجاح!</string>
+
+    <!-- HINTS -->
+    <string name="hint_phone_no">رقم الجوال +966 55 456 654</string>
+    <string name="hint_search">إبحث بواسطة الاسم أو الرقم الخاص أو رقم الجوال</string>
+
+
+    <!-- NOTIFICATION -->
+    <string name="notification_new_captain_title">كابتن جديد!</string>
+    <string name="notification_new_captain_message">تم إضافة كابتن جديد %s</string>
+
+    <string name="notification_new_owner_title">صاحب ملعب جديد!</string>
+    <string name="notification_new_owner_message">تم إضافة صاحب ملعب جديد</string>
+
+    <string name="notification_new_booking_title">حجز كامل جديد!</string>
+    <string name="notification_new_individual_title">حجز فردي جديد</string>
+    <string name="notification_new_booking_message">وجود حجز جديد من نوع ملاعب</string>
+    <string name="notification_new_booking_individual_message">وجود حجز جديد من نوع تمارين</string>
+
+    <string name="notification_full_booking_cancelled_title">تم إلغاء حجز ملعب كامل</string>
+    <string name="notification_full_booking_cancelled_message">تم إلغاء حجز ملعب كامل </string>
+
+
+    <string name="notification_individual_booking_cancelled_title"> إلغاء حجز</string>
+    <string name="notification_individual_booking_cancelled_message">تم إلغاء حجز من نوع  تمارين</string>
+
+    <string name="notification_booking_received_title">إستلام الحجز</string>
+    <string name="notification_booking_received_description">تم إستلام حجزك </string>
+
+    <string name="notification_new_playground_title">ملعب جديد!</string>
+    <string name="notification_new_playground_description">تم إضافة ملعب جديد</string>
+
+    <string name="notification_new_message_title">رسالة جديدة!</string>
+    <string name="notification_new_message_description">لديك رسالة جديدة</string>
+
+    <string name="notification_individual_completed_title">حجز فردي جديد</string>
+    <string name="notification_individual_completed_message">تم إكتمال حجز من نوع تمارين </string>
+
+
+    <!-- PERMISSIONS -->
+    <string name="permissions_dialog_title">Permission Needed</string>
+    <string name="permissions_dialog_message">%s appUpdate needs permissions that you refused or the system failed to apply for an error, please go to the appUpdate settings for manual authorization, otherwise the function can not be used normally!</string>
+    <string name="permissions_dialog_button_positive">OK, open settings</string>
+
+    <!-- Errors -->
+    <string name="error">حدث خطأ أثناء اتمام العملية، يرجى اعادة المحاولة!</string>
+    <string name="error_no_data">لايوجد بيانات لعرضها!</string>
+    <string name="error_download_app">حدث خطأ أثناء عملية التحديث رجاء أعد المحاولة!</string>
+
+    <string name="error_email_already_registered">عنوان البريد الإلكتروني قيد الاستخدام من قبل حساب آخر.</string>
+    <string name="error_phone_no_format">رقم الهاتف غير صحيح، فضلا تحقق من رقم هاتفك!</string>
+    <string name="error_many_request">حدث خطأ في طلب كود التفعيل، رجاء أعد المحاولة!</string>
+    <string name="error_verification_code">رمز التفعيل غير صحيح، او منتهي الصلاحية!</string>
+    <string name="error_user_inactive">حسابك قيد التفعيل، سيتم تفعيل حسابك وابلاغك قريبا!</string>
+    <string name="error_user_owner">عذرا حسابك ليس لديه صلاحية الدخول للتطبيق!</string>
+    <string name="error_user_not_exist">عذرا، لم يتم العثور على حسابك!</string>
+
+    <string name="error_empty_field">الرجاء ادخال البيانات المطلوبة!</string>
+    <string name="error_invalid_email">Invalid Email!</string>
+    <string name="error_no_connection">No Internet connection, please go online! </string>
+    <string name="error_timeout">Could not complete your request due to the network, please retry!</string>
+    <string name="error_password_not_matched">Passwords are not matched!</string>
+    <string name="error_forgot_password">User is not exist!</string>
+    <string name="error_upload_image">You need to upload your IC or Passport Image!</string>
+    <string name="error_upload_image_size">Image size must be less than 1 MB</string>
+    <string name="error_age">Using this appUpdate requires an age greater than 12 years old</string>
+    <string name="error_enroll">You have not enrolled any card yet!</string>
+    <string name="error_share_image_empty">The image resource is empty!</string>
+    <string name="error_share_no_provider">There is no provider for this sharing type!</string>
+    <string name="error_address_empty">Please add your full address!</string>
+    <string name="error_address_field_empty">Your address is missing \"%s\", please fill it in!</string>
+    <string name="error_empty_username">Username can not have whitespaces</string>
+    <string name="error_gps">تعذر الحصول على موقعك الحالي!</string>
+    <string name="error_no_region_selected">الرجاء اختيار المنطقة!</string>
+    <string name="error_no_city_selected">الرجاء اختيار المدينة!</string>
+    <string name="error_no_direction_selected">الرجاء اختيار الجهة!</string>
+    <string name="error_no_location_selected">الرجاء تحديد موقع الملعب!</string>
+    <string name="error_no_size_selected">الرجاء تحديد حجم الملعب!</string>
+    <string name="error_no_duration_selected">الرجاء تحديد المدة الزمنية!</string>
+    <string name="error_no_operation_hour_selected">الرجاء تحديد اوقات العمل!</string>
+    <string name="error_no_price_selected">الرجاء تحديد السعر!</string>
+    <string name="error_no_day_selected">الرجاء تحديد أيام العمل!</string>
+    <string name="show">عرض</string>
+    <string name="has_fine">has fines</string>
+    <string name="dont_has_fine">No fines for him</string>
+    <string name="fines">Fines</string>
+
+    <string name="data_zero">0</string>
+
+
+    <string name="fine_type">Fine Type: </string>
+    <string name="fine_amount">SAR %.0f</string>
+    <string name="fine_payment">Not Paid</string>
+    <string name="fine_attendance">Not Attended</string>
+
+    <string name="fine_status_paid">paid</string>
+    <string name="fine_status_not_paid">not paid</string>
+    <string name="booking_type_no_format">Booking Type: %s</string>
+    <string name="playground_name_no_format">Field Name: </string>
+    <string name="time_no_format">Time: </string>
+    <string name="date_no_format">Date: </string>
+    <string name="amount_no_format">Amount: </string>
+    <string name="status_no_format">Status: </string>
+</resources>
